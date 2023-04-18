@@ -1,0 +1,10 @@
+[workspace]
+
+members = [
+    "rustyflutter",
+    "rustyflutter_build"
+]
+
+exclude = [
+    # not implemented
+]
