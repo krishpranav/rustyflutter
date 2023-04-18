@@ -2,7 +2,6 @@ DummyProject/000755 000765 000024 00000000000 14056515614 013752 5ustar00matejst
 //  main.m
 //  DummyProject
 //
-//  Created by Matej Knopp on 6/4/21.
 //
 
 #import <Cocoa/Cocoa.h>
