@@ -123,7 +123,7 @@ impl<'a> PluginsImpl<'a> {
 
         writeln!(
             file,
-            "fn flutter_get_plugins() -> Vec<nativeshell::shell::platform::engine::PlatformPlugin> {{"
+            "fn flutter_get_plugins() -> Vec<rustyflutter::shell::platform::engine::PlatformPlugin> {{"
         )?;
 
         for plugin in plugins {
@@ -135,7 +135,7 @@ impl<'a> PluginsImpl<'a> {
             let class = &plugin.platform_info.plugin_class;
             writeln!(
                 file,
-                "    nativeshell::shell::platform::engine::PlatformPlugin {{ \
+                "    rustyflutter::shell::platform::engine::PlatformPlugin {{ \
                 name: \"{class}\".into(), register_func: Some({class}RegisterWithRegistrar) }},",
             )?;
         }

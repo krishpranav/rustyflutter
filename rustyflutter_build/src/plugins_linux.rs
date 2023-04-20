@@ -103,7 +103,7 @@ impl<'a> PluginsImpl<'a> {
 
         writeln!(
             file,
-            "fn flutter_get_plugins() -> Vec<nativeshell::shell::platform::engine::PlatformPlugin> {{"
+            "fn flutter_get_plugins() -> Vec<::shell::platform::engine::PlatformPlugin> {{"
         )?;
 
         for plugin in plugins {
@@ -121,7 +121,7 @@ impl<'a> PluginsImpl<'a> {
             let snake_case_class = class.from_case(Case::Pascal).to_case(Case::Snake);
             writeln!(
                 file,
-                "    nativeshell::shell::platform::engine::PlatformPlugin {{ \
+                "    rustyflutter::shell::platform::engine::PlatformPlugin {{ \
                 name: \"{class}\".into(), register_func: Some({snake_case_class}_register_with_registrar) }},",
             )?;
         }

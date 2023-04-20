@@ -107,7 +107,7 @@ end\n";
             contents,
             "ENV['COCOAPODS_DISABLE_STATS'] = 'true'\n\
             platform :osx, '{}'\n\
-            abstract_target 'NativeShellTarget' do\n  use_frameworks! :linkage=>:dynamic\n",
+            abstract_target 'RustyFlutterTarget' do\n  use_frameworks! :linkage=>:dynamic\n",
             Flutter::macosx_deployment_target()
         )
         .unwrap();
@@ -136,7 +136,7 @@ end\n";
 
         writeln!(contents, "  target 'DummyProject' do").unwrap();
         writeln!(contents, "  end").unwrap();
-        writeln!(contents, "  target 'NativeShellPods' do").unwrap();
+        writeln!(contents, "  target 'RustyFlutterPods' do").unwrap();
         writeln!(contents, "  end").unwrap();
         writeln!(contents, "end").unwrap();
 
@@ -312,13 +312,13 @@ end\n";
         use std::io::Write;
         writeln!(
             file,
-            "fn flutter_get_plugins() -> Vec<nativeshell::shell::platform::engine::PlatformPlugin> {{"
+            "fn flutter_get_plugins() rustyflutter-> Vec<::shell::platform::engine::PlatformPlugin> {{"
         )?;
         writeln!(file, "  vec![")?;
         for class in classes {
             writeln!(
                 file,
-                "    nativeshell::shell::platform::engine::PlatformPlugin {{ \
+                "    rustyflutter::shell::platform::engine::PlatformPlugin {{ \
                 name: \"{}\".into(), class:\"{}\".into() }},",
                 class.0, class.1
             )?;
