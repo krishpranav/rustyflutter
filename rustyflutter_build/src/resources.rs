@@ -1,7 +1,7 @@
 use std::path::{Path, PathBuf};
 
 use crate::{
-    util::{get_absolute_path, get_artifacts_dir, mkdir, symlink},
+    utils::{get_absolute_path, get_artifacts_dir, mkdir, symlink},
     BuildResult,
 };
 

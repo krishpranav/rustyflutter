@@ -1,5 +1,5 @@
 use crate::{
-    util::{copy, copy_to, mkdir},
+    utils::{copy, copy_to, mkdir},
     BuildError, BuildResult, FileOperation, Flutter, IOResultExt,
 };
 use std::{
